@@ -6,6 +6,7 @@ export class HostedPaymentData {
   public paymentKey: string;
   public productId: string;
   public supplementaryData: object;
+  public email: string;
 
   public constructor() {
     this.supplementaryData = {};
