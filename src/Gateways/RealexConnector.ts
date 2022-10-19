@@ -288,14 +288,27 @@ export class RealexConnector extends XmlGateway implements IRecurringService {
       request.PAYER_REF = encoder(builder.hostedPaymentData.customerKey || "");
       request.PMT_REF = encoder(builder.hostedPaymentData.paymentKey || "");
       request.PROD_ID = encoder(builder.hostedPaymentData.productId || "");
+      request.HPP_CUSTOMER_EMAIL = encoder(builder.hostedPaymentData.email || "");
     }
     if (builder.shippingAddress) {
       request.SHIPPING_CODE = encoder(builder.shippingAddress.postalCode || "");
       request.SHIPPING_CO = encoder(builder.shippingAddress.country || "");
+      request.HPP_SHIPPING_CITY = encoder(builder.shippingAddress.city || "");
+      request.HPP_SHIPPING_COUNTRY = encoder(builder.shippingAddress.country || "");
+      request.HPP_SHIPPING_STREET1 = encoder(builder.shippingAddress.streetAddress1 || "");
+      request.HPP_SHIPPING_STREET2 = encoder(builder.shippingAddress.streetAddress2 || "");
+      request.HPP_SHIPPING_STREET3 = encoder(builder.shippingAddress.streetAddress3 || "");
+      request.HPP_SHIPPING_POSTALCODE = encoder(builder.shippingAddress.postalCode || "");
     }
     if (builder.sillingAddress) {
       request.BILLING_CODE = encoder(builder.billingAddress.postalCode || "");
       request.BILLING_CO = encoder(builder.billingAddress.country || "");
+      request.HPP_BILLING_CITY = encoder(builder.shippingAddress.city || "");
+      request.HPP_BILLING_COUNTRY = encoder(builder.billingAddress.country || "");
+      request.HPP_BILLING_STREET1 = encoder(builder.billingAddress.streetAddress1 || "");
+      request.HPP_BILLING_STREET2 = encoder(builder.billingAddress.streetAddress2 || "");
+      request.HPP_BILLING_STREET3 = encoder(builder.billingAddress.streetAddress3 || "");
+      request.HPP_BILLING_POSTALCODE = encoder(builder.billingAddress.postalCode || "");
     }
     request.CUST_NUM = encoder(builder.customerId || "");
     request.VAR_REF = encoder(builder.clientTransactionId || "");
