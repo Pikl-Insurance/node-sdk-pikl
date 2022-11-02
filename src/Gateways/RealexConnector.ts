@@ -300,7 +300,7 @@ export class RealexConnector extends XmlGateway implements IRecurringService {
       request.HPP_SHIPPING_STREET3 = encoder(builder.shippingAddress.streetAddress3 || "");
       request.HPP_SHIPPING_POSTALCODE = encoder(builder.shippingAddress.postalCode || "");
     }
-    if (builder.sillingAddress) {
+    if (builder.billingAddress) {
       request.BILLING_CODE = encoder(builder.billingAddress.postalCode || "");
       request.BILLING_CO = encoder(builder.billingAddress.country || "");
       request.HPP_BILLING_CITY = encoder(builder.shippingAddress.city || "");
